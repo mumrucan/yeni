@@ -3,14 +3,14 @@ import { NavLink } from 'react-router-dom';
 
 const SignedOutlinks = () => {
   return (
-    <ul>
-      <li>
+    <div className="flex items-center">
+      <div className="p-2">
         <NavLink to="/signup">Sign Up</NavLink>
-      </li>
-      <li>
+      </div>
+      <div className="p-2">
         <NavLink to="/signup">Login</NavLink>
-      </li>
-    </ul>
+      </div>
+    </div>
   );
 };
 

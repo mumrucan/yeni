@@ -8,14 +8,13 @@ import ProjectDetails from './components/projects/ProjectDetails';
 function App() {
   return (
     <BrowserRouter>
-      <div>
-        <Navbar />
-        <Switch>
-          <Route path="/" exact component={Dashboard}></Route>
-          <Route path="/create" component={CreateProject}></Route>
-          <Route path="/project/:id" component={ProjectDetails}></Route>
-        </Switch>
-      </div>
+      <Navbar />
+
+      <Switch>
+        <Route path="/" exact component={Dashboard}></Route>
+        <Route path="/create" component={CreateProject}></Route>
+        <Route path="/event/:id" component={ProjectDetails}></Route>
+      </Switch>
     </BrowserRouter>
   );
 }

@@ -1,15 +1,8 @@
 import React from 'react';
+import { Card } from './Card';
 
 const ProjectSummary = ({ project }) => {
-  return (
-    <div>
-      <div>
-        <span>Başlık:{project.title}</span>
-        <p>Bu yazı tunç tarafından oluşturuldu.</p>
-        <p>13 Agustos</p>
-      </div>
-    </div>
-  );
+  return <Card project={project} />;
 };
 
 export default ProjectSummary;

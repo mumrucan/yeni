@@ -7,8 +7,9 @@ import { compose } from 'redux';
 const Dashboard = (props) => {
   const projects = props.projects;
   return (
-    <div>
-      <ProjectList projects={projects} />
+    <div className="flex justify-center">
+      {' '}
+      <ProjectList projects={projects} />{' '}
     </div>
   );
 };

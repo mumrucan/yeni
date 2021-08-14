@@ -3,14 +3,15 @@ import { NavLink } from 'react-router-dom';
 
 const SignedInlinks = () => {
   return (
-    <ul>
-      <li>
-        <NavLink to="/create">New Project</NavLink>
-      </li>
-      <li>
+    <div className="flex flex-row items-center ">
+      <div className="p-2">
+        <NavLink to="/create">New Events</NavLink>
+      </div>
+
+      <div className="p-2">
         <NavLink to="/">Logout</NavLink>
-      </li>
-    </ul>
+      </div>
+    </div>
   );
 };
 
