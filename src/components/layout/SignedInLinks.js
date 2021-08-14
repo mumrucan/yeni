@@ -1,18 +1,34 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { signOut } from '../../store/actions/authActions';
 
-const SignedInlinks = () => {
+const SignedInLinks = (props) => {
   return (
-    <div className="flex flex-row items-center ">
-      <div className="p-2">
-        <NavLink to="/create">New Events</NavLink>
+    <div className="m-3 flex">
+      <div>
+        <NavLink to="/create">Add list</NavLink>
       </div>
-
-      <div className="p-2">
-        <NavLink to="/">Logout</NavLink>
-      </div>
+      <div className="mx-3">
+        <NavLink onClick={props.signOut} to="/">
+          Log Out
+        </NavLink>
+      </div>{' '}
     </div>
   );
 };
 
-export default SignedInlinks;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    signOut: () => dispatch(signOut()),
+  };
+};
+
+const mapStateToProps = (state) => {
+  return {
+    projects: state.firestore.ordered.deneme,
+    auth: state.firebase.auth,
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(SignedInLinks);

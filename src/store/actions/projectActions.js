@@ -5,6 +5,7 @@ export const createProject = (project) => {
       .collection('deneme')
       .add({
         ...project,
+        createdAt: new Date(),
       })
       .then(() => {
         dispatch({ type: 'CREATE_PROJECT', project });

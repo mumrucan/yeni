@@ -3,9 +3,13 @@ import { connect } from 'react-redux';
 import ProjectList from '../projects/ProjectList';
 import { firestoreConnect } from 'react-redux-firebase';
 import { compose } from 'redux';
+import { Redirect } from 'react-router';
 
 const Dashboard = (props) => {
-  const projects = props.projects;
+  const { projects, auth } = props;
+
+  //if (!auth.uid) return <Redirect to="/signin" />;
+
   return (
     <div className="flex justify-center">
       {' '}
@@ -15,10 +19,13 @@ const Dashboard = (props) => {
 };
 
 const mapStateToProps = (state) => {
-  return { projects: state.firestore.ordered.deneme };
+  return {
+    projects: state.firestore.ordered.deneme,
+    auth: state.firebase.auth,
+  };
 };
 
 export default compose(
   connect(mapStateToProps),
-  firestoreConnect([{ collection: 'deneme' }])
+  firestoreConnect([{ collection: 'deneme', orderBy: ['createdAt', 'desc'] }])
 )(Dashboard);

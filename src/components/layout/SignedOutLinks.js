@@ -1,17 +1,17 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-const SignedOutlinks = () => {
+const SignedOutLinks = () => {
   return (
-    <div className="flex items-center">
-      <div className="p-2">
-        <NavLink to="/signup">Sign Up</NavLink>
+    <div className="m-3 flex">
+      <div>
+        <NavLink to="/signup">Signup</NavLink>
       </div>
-      <div className="p-2">
-        <NavLink to="/signup">Login</NavLink>
-      </div>
+      <div className="mx-3">
+        <NavLink to="/signin">Login</NavLink>
+      </div>{' '}
     </div>
   );
 };
 
-export default SignedOutlinks;
+export default SignedOutLinks;
