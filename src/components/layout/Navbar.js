@@ -12,11 +12,11 @@ const Navbar = (props) => {
   return (
     <header className="flex items-center justify-between h-12 shadow">
       <div className="flex mx-4 ">
-        <div className="font-bold text-xl">
+        <div className="font-bold font-roboto text-_3xl">
           <Link to="/">NIGHTLIFE</Link>
         </div>
       </div>
-      <div className="flex flex-col items-center justify-between h-12 ">
+      <div className="flex flex-col items-center justify-between h-12 font-roboto">
         {links}
       </div>
     </header>

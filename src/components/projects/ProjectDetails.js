@@ -7,18 +7,8 @@ const ProjectDetails = (props) => {
   const { project } = props;
   if (project) {
     return (
-      <div>
-        <div>
-          <p>{project.title}</p>
-        </div>
-
-        <div>
-          <p>{project.desc}</p>
-        </div>
-
-        <div>
-          <p>{project.city}</p>
-        </div>
+      <div className="flex flex-col justify-center  ">
+        <div className="flex flex-wrap justify-center">{project.title}</div>
       </div>
     );
   } else {
@@ -45,6 +35,7 @@ export default compose(
   firestoreConnect([
     {
       collection: 'deneme',
+      orderBy: ['createdAt', 'desc'],
     },
   ])
 )(ProjectDetails);

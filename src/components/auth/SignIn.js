@@ -21,18 +21,18 @@ const SignIn = (creds) => {
   if (auth.uid) return <Redirect to="/" />;
 
   return (
-    <div className="flex justify-center">
+    <div className="flex justify-center ">
       <form
         onSubmit={handleSubmit}
-        className="bg-white shadow-md m-10 w-1/3 rounded px-8 pt-6 pb-8 mb-4 flex flex-col"
+        className="bg-white shadow-md m-10 w-1/3 rounded px-8 pt-6 pb-8 mb-4 flex flex-col font-roboto "
       >
         <div className="mb-4 m-2">
-          <label
-            className="block text-grey-darker text-sm font-bold mb-2"
-            htmlFor="username"
+          <div
+            className="block text-grey-darker text-sm  font-bold mb-2"
+            htmlFor="email"
           >
             E-Mail
-          </label>
+          </div>
           <input
             type="email"
             id="email"

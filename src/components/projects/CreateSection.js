@@ -2,7 +2,7 @@ import React from 'react';
 
 export const CreateSection = ({ handleChange, handleSubmit }) => {
   return (
-    <div className="flex flex-col justify-center items-center my-4">
+    <div className="flex flex-col justify-center items-center my-4 font-roboto">
       <div>
         <div>
           <div class="md:grid md:grid-cols-3 md:gap-6">

@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import ProjectList from '../projects/ProjectList';
 import { firestoreConnect } from 'react-redux-firebase';
 import { compose } from 'redux';
-import { Redirect } from 'react-router';
 
 const Dashboard = (props) => {
   const { projects, auth } = props;
@@ -12,8 +11,7 @@ const Dashboard = (props) => {
 
   return (
     <div className="flex justify-center">
-      {' '}
-      <ProjectList projects={projects} />{' '}
+      <ProjectList projects={projects} />
     </div>
   );
 };
