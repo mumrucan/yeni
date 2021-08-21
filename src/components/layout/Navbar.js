@@ -10,7 +10,7 @@ const Navbar = (props) => {
   const links = auth.uid ? <SignedInLinks /> : <SignedOutLinks />;
 
   return (
-    <header className="flex items-center justify-between h-12 shadow">
+    <header className="flex items-center justify-between h-12 shadow text-tiny  ">
       <div className="flex mx-4 ">
         <div className="font-bold font-roboto text-_3xl">
           <Link to="/">NIGHTLIFE</Link>

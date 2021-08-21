@@ -21,6 +21,7 @@ import firebase from 'firebase/app';
 
 const store = createStore(
   rootReducer,
+
   compose(
     applyMiddleware(thunk.withExtraArgument({ getFirebase, getFirestore })),
     reduxFirestore(firebase, fbConfig)
@@ -36,7 +37,12 @@ const rrfProps = {
 
 function AuthIsLoaded({ children }) {
   const auth = useSelector((state) => state.firebase.auth);
-  if (!isLoaded(auth)) return <div>Loading Screen...</div>;
+  if (!isLoaded(auth))
+    return (
+      <div className="flex justify-center items-center">
+        <div>Loading Screen...</div>
+      </div>
+    );
   return children;
 }
 
